@@ -11,8 +11,8 @@ fn main() {
         for line in lines {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
-                result1 = result1 + process(&ba, 2);
-                result2 = result2 + process(&ba, 3);
+                result1 = result1 + process(ba, 2);
+                result2 = result2 + process(ba, 3);
             }
         }
     }
@@ -28,7 +28,7 @@ where P: AsRef<Path>, {
     Ok(io::BufReader::new(file).lines())
 }
 
-fn process(s: [u8], part: i32) -> i32 {
+fn process(s: &[u8], part: i32) -> i32 {
     return s.len() as i32 + part;
 }
 
