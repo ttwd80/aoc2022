@@ -10,7 +10,7 @@ fn main() {
         for line in lines {
             if let Ok(s) = line {
                 // println!("{}", ip);
-                let x:[u8;128] = [0;128];
+                let mut x:[u8;128] = [0;128];
                 let n = s.len();
                 let b = s.as_bytes();
                 let mut a = 0;
