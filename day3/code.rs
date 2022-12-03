@@ -19,7 +19,7 @@ fn main() {
                 while a < z {
                     let pa = b[a] as usize;
                     if x[pa] == 3 {
-                        value = pa;
+                        value = pa as u8;
                         break;
                     } else {
                         x[pa] = 1;
@@ -28,13 +28,14 @@ fn main() {
                     
                     let pz = b[z] as usize;
                     if x[pz] == 3 {
-                        value = pz;
+                        value = pz as u8;
                     } else {
                         x[pz] = 2;
                         z = z - 1;
                     }                        
                 }
                 let mut plus = 0;
+                println!("{}, value);
                 if value <= 90 {
                     plus = value - 64 + 26;
                 } else {
