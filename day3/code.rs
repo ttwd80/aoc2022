@@ -21,13 +21,13 @@ fn main() {
                 while a < z {
                     let ba = b[a];
                     let bz = b[z];
-                    if hz.contains_key(ba) {
+                    if hz.contains(ba) {
                         value = ba;
                         break;
                     } else {
                         ha.insert(ba);
                     }
-                    if ha.contains_key(bz) {
+                    if ha.contains(bz) {
                         value = bz;
                         break;
                     } else {
