@@ -14,8 +14,8 @@ fn main() {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
                 println!("{}", s);
+                block3.push(s);
                 if block3.len() == 3 {
-                    block3.push(s);
                     block3.truncate(0);
                     break;
                 }
