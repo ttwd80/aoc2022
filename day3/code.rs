@@ -5,6 +5,7 @@ use std::path::Path;
 fn main() {
     let mut result1:i32 = 0;
     let target1 = calculate_target(2);
+    let target2 = calculate_target(3);
     println!("{}", target1);
     let mut block3: Vec<String> = Vec::new();
     // File hosts must exist in current path before this produces output
@@ -16,6 +17,7 @@ fn main() {
                 println!("{}", s);
                 block3.push(s);
                 if block3.len() == 3 {
+                    process(block3, target2);
                     block3.truncate(0);
                     break;
                 }
@@ -25,6 +27,11 @@ fn main() {
     }
     println!("{}", result1);
 }
+
+fn process(v: &Vec<String>, target: i32) -> i32 {
+    return 100;
+}
+
 
 // The output is wrapped in a Result to allow matching on errors
 // Returns an Iterator to the Reader of the lines of the file.
