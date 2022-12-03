@@ -10,8 +10,9 @@ fn main() {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             if let Ok(s) = line {
-                result1 = result1 + process(s, 2);
-                result2 = result2 + process(s, 3);
+                let ba = s.as_bytes();
+                result1 = result1 + process(ba, 2);
+                result2 = result2 + process(ba, 3);
             }
         }
     }
