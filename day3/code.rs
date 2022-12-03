@@ -41,7 +41,7 @@ fn main() {
                     plus = value - 96;
                 }
                 total = total + plus;    
-                println!("{} - {} - {}", value as char, plus, total);
+                println!("{} - {} - {}", (value as u8) as char, plus, total);
             }
         }
     }
