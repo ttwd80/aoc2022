@@ -27,10 +27,10 @@ fn main() {
                     }
                     
                     let pz = b[z] as i8;
-                    if x[pb] == 1 {
-                        value = pb;
+                    if x[pz] == 1 {
+                        value = pz;
                     } else {
-                        x[pb] = 1;
+                        x[pz] = 1;
                         z = z - 1;
                     }                        
                 }
