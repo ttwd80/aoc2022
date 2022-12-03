@@ -27,6 +27,6 @@ where P: AsRef<Path>, {
 }
 
 fn process(s: String, part: i32) -> i32 {
-    return s.len() + part;
+    return s.len() as i32 + part;
 }
 
