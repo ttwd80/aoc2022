@@ -11,7 +11,7 @@ fn main() {
                 // println!("{}", ip);
                 let x:[u8;128] = [0;128];
                 let s = line.unwrap();
-                let n = line.len();
+                let n = s.len();
             }
         }
     }
