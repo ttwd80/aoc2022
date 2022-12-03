@@ -7,8 +7,8 @@ fn main() {
     let mut result2 = 0 as i32;
     let target2 = calculate_target(2);
     let target3 = calculate_target(3);
-    println!(target2);
-    println!(target3);
+    println!("{}", target2);
+    println!("{}", target3);
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
