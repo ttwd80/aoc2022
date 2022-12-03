@@ -33,7 +33,25 @@ where P: AsRef<Path>, {
 }
 
 fn process(s: &[u8], parts: i32, target: i32) -> i32 {
-    println!("{}", target);
+    let mut array: [u8; 128] = [0: 128];
+    let mut marker: [u8: parts] = [0: parts];
+    let mut m = 1;
+    for n in 0..parts {
+        marker[n] = m;
+        m = m + m;
+    }
+    let count = s.len() / parts();
+    for e in 0..count {
+        for p in 0..parts {
+            let offset = (p * parts) + count;
+            let value = s[offset];
+            array[value as usize] += marker[p];
+            if marker[p] == target {
+                return value;
+            }
+        }
+    }
+    println!("error");
     return s.len() as i32 + parts;
 }
 
