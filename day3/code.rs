@@ -27,7 +27,7 @@ where P: AsRef<Path>, {
     Ok(io::BufReader::new(file).lines())
 }
 
-fn process(s: &str, part: i32) -> i32 {
-    return part;
+fn process(s: &String, part: i32) -> i32 {
+    return s.len() + part;
 }
 
