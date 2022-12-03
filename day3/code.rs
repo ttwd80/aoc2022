@@ -39,8 +39,10 @@ fn process(s: &[u8], parts: i32, target: i32) -> i32 {
 
 fn calculate_target(parts: i32) -> i32 {
     let mut total:i32 = 0;
+    let mut b = 1;
     for n in 0..parts {
-        total = total + n + 1;
+        total = total + b;
+        b = b + b;
     }
     return total;
 }
