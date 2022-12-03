@@ -34,13 +34,14 @@ fn main() {
                         z = z - 1;
                     }                        
                 }
+                let mut plus = 0;
                 if value <= 90 {
-                    total = total + value - 64;
+                    plus = value - 64;
                 } else {
-                    total = total + value - 96;
+                    plus = value - 96;
                 }
-                    
-                // println!("{}", n);
+                total = total + plus;    
+                println!("{} - {} - {}", value as char, plus, total);
             }
         }
     }
