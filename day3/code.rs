@@ -11,31 +11,33 @@ fn main() {
         for line in lines {
             if let Ok(s) = line {
                 // println!("{}", ip);
-                let mut x:[u8;128] = [0;128];
+                let mut ha = HashSet::new();
+                let mut hz = HashSet::new();
                 let n = s.len();
                 let b = s.as_bytes();
-                let mut a = 0;
-                let mut z = n - 1;
-                let mut value = 0;
+                let mut a = 0 as usize;
+                let mut z = n - 1 as usize;
+                let mut value = 0 as u8;
                 while a < z {
-                    let pa = b[a] as usize;
-                    if x[pa] == 3 {
-                        value = pa as u8;
+                    let ba = b[a];
+                    let bz = b[z];
+                    if hz.contains_key(ba) {
+                        value = ba;
                         break;
                     } else {
-                        x[pa] = 1;
-                        a = a + 1;
+                        ha.insert(ba);
                     }
-                    
-                    let pz = b[z] as usize;
-                    if x[pz] == 3 {
-                        value = pz as u8;
+                    if ha.contains_key(bz) {
+                        value = bz;
+                        break;
                     } else {
-                        x[pz] = 2;
-                        z = z - 1;
-                    }                        
+                        hz.insert(bz);
+                    }
+                    a = a + 1;
+                    z = z - 1;
+        
                 }
-                let mut plus = 0;
+                let mut plus = 0 as u32;
                 println!("{}", value);
                 if value <= 90 {
                     plus = value - 64 + 26;
