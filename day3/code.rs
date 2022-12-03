@@ -12,7 +12,7 @@ fn main() {
                 let x:[u8;128] = [0;128];
                 let s = line.unwrap();
                 let n = s.len();
-                println!("{}", n);
+                println!("{}", ip);
             }
         }
     }
