@@ -6,6 +6,7 @@ fn main() {
     let mut result1:i32 = 0;
     let target1 = calculate_target(2);
     println!("{}", target1);
+    let mut block3: Vec<String> = Vec::new();
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
@@ -13,7 +14,11 @@ fn main() {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
                 println!("{}", s);
-                break;
+                if block3.len() == 3 {
+                    block3.push(s);
+                    block3.truncate(0);
+                    break;
+                }
 
             }
         }
