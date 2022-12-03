@@ -4,52 +4,19 @@ use std::path::Path;
 use std::collections::HashSet;
 
 fn main() {
-    let mut total = 0 as u32;
+    let mut result1 = 0 as u32;
+    let mut result2 = 0 as u32;
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             if let Ok(s) = line {
-                // println!("{}", ip);
-                let mut ha = HashSet::new();
-                let mut hz = HashSet::new();
-                let n = s.len();
-                let b = s.as_bytes();
-                let mut a = 0 as usize;
-                let mut z = n - 1 as usize;
-                let mut value = 0 as u8;
-                while a < z {
-                    let ba = b[a];
-                    let bz = b[z];
-                    if hz.contains(&ba) {
-                        value = ba;
-                        break;
-                    } else {
-                        ha.insert(ba);
-                    }
-                    if ha.contains(&bz) {
-                        value = bz;
-                        break;
-                    } else {
-                        hz.insert(bz);
-                    }
-                    a = a + 1;
-                    z = z - 1;
-        
-                }
-                let mut plus = 0 as u32;
-                println!("{}", value);
-                if value <= 90 {
-                    plus = (value - 64 + 26) as u32;
-                } else {
-                    plus = (value - 96) as u32;
-                }
-                total = total + plus;    
-                println!("{} - {} - {}", (value as u8) as char, plus, total);
+                result1 = result1 + process(s, 2);
+                result2 = result2 + process(s, 3);
             }
         }
     }
-    println!("{}", total);
+    println!("{}", total1);
 }
 
 // The output is wrapped in a Result to allow matching on errors
@@ -59,3 +26,8 @@ where P: AsRef<Path>, {
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
+
+fn process(s: &str, part: int32) {
+    return part;
+}
+
