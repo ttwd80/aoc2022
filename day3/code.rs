@@ -12,7 +12,7 @@ fn main() {
         for line in lines {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
-                println!(s);
+                println!("{}", s);
                 break;
 
             }
