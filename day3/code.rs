@@ -7,12 +7,11 @@ fn main() {
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
-            if let Ok(ip) = line {
+            if let Ok(s) = line {
                 // println!("{}", ip);
                 let x:[u8;128] = [0;128];
-                let s = line.unwrap();
                 let n = s.len();
-                println!("{}", ip);
+                println!("{}", n);
             }
         }
     }
