@@ -3,25 +3,22 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
-    let mut result1 = 0 as i32;
-    let mut result2 = 0 as i32;
-    let target2 = calculate_target(2);
-    let target3 = calculate_target(3);
-    println!("{}", target2);
-    println!("{}", target3);
+    let mut result1:i32 = 0;
+    let target1 = calculate_target(2);
+    println!("{}", target1);
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
-                result1 = result1 + process(ba, 2, target2);
-                result2 = result2 + process(ba, 3, target3);
+                println!(s):
+                break;
+
             }
         }
     }
     println!("{}", result1);
-    println!("{}", result2);
 }
 
 // The output is wrapped in a Result to allow matching on errors
