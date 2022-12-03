@@ -45,8 +45,8 @@ fn process(s: &[u8], parts: i32, target: i32) -> i32 {
         for p in 0..parts {
             let offset = ((p * parts) + count) as usize;
             let value = s[offset];
-            array[value as usize] += marker[p];
-            if marker[p] == target {
+            array[value as usize] += marker[p as usize];
+            if marker[p as usize] == target {
                 return value;
             }
         }
