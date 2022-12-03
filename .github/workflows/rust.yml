@@ -19,4 +19,4 @@ jobs:
     - name: Build
       run: cd day3 && rustc code.rs
     - name: Run tests
-      run: cd day3 && ./code
+      run: cd day3 && RUST_BACKTRACE=1 ./code
