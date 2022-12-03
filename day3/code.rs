@@ -35,7 +35,7 @@ fn main() {
                     }                        
                 }
                 let mut plus = 0;
-                println!("{}, value);
+                println!("{}", value);
                 if value <= 90 {
                     plus = value - 64 + 26;
                 } else {
