@@ -3,6 +3,7 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
+    let mut total = 0;
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
@@ -33,10 +34,17 @@ fn main() {
                         z = z - 1;
                     }                        
                 }
-                println!("{}", n);
+                if value <= 122 {
+                    total = total + value - 96;
+                } else {
+                    total = total + value - 64;
+                }
+                    
+                // println!("{}", n);
             }
         }
     }
+    println!("{}", total);
 }
 
 // The output is wrapped in a Result to allow matching on errors
