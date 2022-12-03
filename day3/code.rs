@@ -18,7 +18,7 @@ fn main() {
                 let mut value = 0;
                 while a < z {
                     let pa = b[a] as usize;
-                    if x[pa] == 1 {
+                    if x[pa] == 3 {
                         value = pa;
                         break;
                     } else {
@@ -27,10 +27,10 @@ fn main() {
                     }
                     
                     let pz = b[z] as usize;
-                    if x[pz] == 1 {
+                    if x[pz] == 3 {
                         value = pz;
                     } else {
-                        x[pz] = 1;
+                        x[pz] = 2;
                         z = z - 1;
                     }                        
                 }
