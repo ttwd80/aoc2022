@@ -33,8 +33,8 @@ where P: AsRef<Path>, {
 }
 
 fn process(s: &[u8], parts: i32, target: i32) -> i32 {
-    let mut array: [u8; 128] = [0: 128];
-    let mut marker: [u8: parts] = [0: parts];
+    let mut array: [u8; 128] = [0; 128];
+    let mut marker: [u8; parts] = [0; parts];
     let mut m = 1;
     for n in 0..parts {
         marker[n] = m;
