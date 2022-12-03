@@ -9,7 +9,7 @@ fn main() {
         for line in lines {
             if let Ok(ip) = line {
                 // println!("{}", ip);
-                let x:[u8;128] = [0];
+                let x:[u8;128] = [0,128];
             }
         }
     }
