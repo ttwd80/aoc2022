@@ -34,10 +34,10 @@ fn main() {
                         z = z - 1;
                     }                        
                 }
-                if value <= 122 {
-                    total = total + value - 96;
-                } else {
+                if value <= 90 {
                     total = total + value - 64;
+                } else {
+                    total = total + value - 96;
                 }
                     
                 // println!("{}", n);
