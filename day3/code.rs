@@ -37,7 +37,7 @@ fn process(s: &[u8], parts: i32, target: i32) -> i32 {
     let mut marker = vec![0 as u8; parts as usize];
     let mut m = 1;
     for n in 0..parts {
-        marker[n] = m;
+        marker[n as usize] = m;
         m = m + m;
     }
     let count = s.len() / parts;
