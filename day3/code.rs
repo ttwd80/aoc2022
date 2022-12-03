@@ -34,7 +34,7 @@ where P: AsRef<Path>, {
 
 fn process(s: &[u8], parts: i32, target: i32) -> i32 {
     let mut array: [u8; 128] = [0; 128];
-    let mut marker = vec![0 as u8; parts];
+    let mut marker = vec![0 as u8; parts as usize];
     let mut m = 1;
     for n in 0..parts {
         marker[n] = m;
