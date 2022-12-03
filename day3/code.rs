@@ -11,6 +11,28 @@ fn main() {
                 // println!("{}", ip);
                 let x:[u8;128] = [0;128];
                 let n = s.len();
+                let b = s.as_bytes();
+                let mut a = 0;
+                let mut z = n - 1;
+                let mut value = 0;
+                while a < z {
+                    let pa = b[a] as i8;
+                    if x[pa] == 1 {
+                        value = pa;
+                        break;
+                    } else {
+                        x[pa] = 1;
+                        a = a + 1;
+                    }
+                    
+                    let pz = b[z] as i8;
+                    if x[pb] == 1 {
+                        value = pb;
+                    } else {
+                        x[pb] = 1;
+                        z = z - 1;
+                    }                        
+                }
                 println!("{}", n);
             }
         }
