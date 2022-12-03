@@ -40,9 +40,9 @@ fn main() {
                 let mut plus = 0 as u32;
                 println!("{}", value);
                 if value <= 90 {
-                    plus = value - 64 + 26 as u32;
+                    plus = (value - 64 + 26) as u32;
                 } else {
-                    plus = value - 96 as u32;
+                    plus = (value - 96) as u32;
                 }
                 total = total + plus;    
                 println!("{} - {} - {}", (value as u8) as char, plus, total);
