@@ -47,7 +47,7 @@ fn process(s: &[u8], parts: i32, target: i32) -> i32 {
             let value = s[offset];
             array[value as usize] = array[value as usize] | marker[p as usize];
             if marker[p as usize] == target as u8 {
-                return value;
+                return value.into();
             }
         }
     }
