@@ -1,7 +1,6 @@
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
-use std::collections::HashSet;
 
 fn main() {
     let mut result1 = 0 as i32;
@@ -11,8 +10,8 @@ fn main() {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             if let Ok(s) = line {
-                result1 = result1 + process(s, 2);
-                result2 = result2 + process(s, 3);
+                result1 = result1 + process(&s, 2);
+                result2 = result2 + process(&s, 3);
             }
         }
     }
@@ -27,7 +26,7 @@ where P: AsRef<Path>, {
     Ok(io::BufReader::new(file).lines())
 }
 
-fn process(s: &String, part: i32) -> i32 {
+fn process(s: String, part: i32) -> i32 {
     return s.len() + part;
 }
 
