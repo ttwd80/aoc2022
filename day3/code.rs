@@ -36,7 +36,7 @@ fn main() {
                 }
                 let mut plus = 0;
                 if value <= 90 {
-                    plus = value - 64;
+                    plus = value - 64 + 26;
                 } else {
                     plus = value - 96;
                 }
