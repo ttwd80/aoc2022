@@ -30,6 +30,7 @@ where P: AsRef<Path>, {
 
 fn process(s: &[u8], parts: i32) -> i32 {
     let mut target = calculate_target(parts);
+    println!("{}", target);
     return s.len() as i32 + parts;
 }
 
