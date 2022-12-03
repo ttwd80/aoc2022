@@ -15,7 +15,8 @@ fn main() {
             }
         }
     }
-    println!("{}", total1);
+    println!("{}", result1);
+    println!("{}", result2);
 }
 
 // The output is wrapped in a Result to allow matching on errors
