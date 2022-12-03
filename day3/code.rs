@@ -4,8 +4,8 @@ use std::path::Path;
 use std::collections::HashSet;
 
 fn main() {
-    let mut result1 = 0 as u32;
-    let mut result2 = 0 as u32;
+    let mut result1 = 0 as i32;
+    let mut result2 = 0 as i32;
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
@@ -27,7 +27,7 @@ where P: AsRef<Path>, {
     Ok(io::BufReader::new(file).lines())
 }
 
-fn process(s: &str, part: int32) {
+fn process(s: &str, part: i32) -> i32 {
     return part;
 }
 
