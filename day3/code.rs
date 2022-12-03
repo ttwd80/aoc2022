@@ -34,7 +34,7 @@ fn process(s: &[u8], parts: i32) -> i32 {
     return s.len() as i32 + parts;
 }
 
-fn calculate_target(parts: i32) -> {
+fn calculate_target(parts: i32) -> i32 {
     let mut total:i32 = 0;
     for n in 1..parts {
         total = total + n;
