@@ -17,7 +17,7 @@ fn main() {
                 let mut z = n - 1;
                 let mut value = 0;
                 while a < z {
-                    let pa = b[a] as i8;
+                    let pa = b[a] as usize;
                     if x[pa] == 1 {
                         value = pa;
                         break;
@@ -26,7 +26,7 @@ fn main() {
                         a = a + 1;
                     }
                     
-                    let pz = b[z] as i8;
+                    let pz = b[z] as usize;
                     if x[pz] == 1 {
                         value = pz;
                     } else {
