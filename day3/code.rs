@@ -31,6 +31,7 @@ fn main() {
 }
 
 fn process3(v: &Vec<String>, target: i32) -> i32 {
+    let mut _block:[i32;128] = [0, 128];
     return 100;
 }
 
