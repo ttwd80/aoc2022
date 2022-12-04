@@ -4,6 +4,7 @@ use std::path::Path;
 
 fn main() {
     let mut result1:i32 = 0;
+    let mut result3:i32 = 0;
     let target1 = calculate_target(2);
     let target2 = calculate_target(3);
     println!("{}", target1);
@@ -17,7 +18,7 @@ fn main() {
                 println!("{}", s);
                 block3.push(s);
                 if block3.len() == 3 {
-                    process3(&block3, target2);
+                    result += process3(&block3, target2);
                     block3.truncate(0);
                     break;
                 }
@@ -26,6 +27,7 @@ fn main() {
         }
     }
     println!("{}", result1);
+    println!("{}", result3);
 }
 
 fn process3(v: &Vec<String>, target: i32) -> i32 {
