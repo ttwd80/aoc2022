@@ -26,7 +26,7 @@ fn main() {
             }
         }
     }
-    result3 += process3(&block3, target2);
+    // result3 += process3(&block3, target2);
     println!("{}", result1);
     println!("{}", result3);
 }
