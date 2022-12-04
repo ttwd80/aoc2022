@@ -38,7 +38,22 @@ fn process3(v: &Vec<String>, target: i32) -> i32 {
         let c = v0.chars().nth(i) as usize;
         block[c] |= 1;
     }
-    println!("{}", block);
+    let v1 = &v[1];
+    let n1  = v1.len();
+    for i in 0..n1 {
+        let c = v1.chars().nth(i) as usize;
+        block[c] |= 2;
+    }
+    let v2 = &v[2];
+    let n2 = v2.len();
+    for i in 0..n2 {
+        let c = v2.chars().nth(i) as usize;
+        block[c] |= 4;
+        if block[c] == 7 {
+            println!("{}", c as char);
+            return c as uint;
+        }
+    }
     return 100;
 }
 
