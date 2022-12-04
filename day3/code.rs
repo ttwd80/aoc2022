@@ -31,8 +31,14 @@ fn main() {
 }
 
 fn process3(v: &Vec<String>, target: i32) -> i32 {
-    let mut _block:[u8;128] = [0; 128];
-    let _v0 = &v[0];
+    let mut block:[u8;128] = [0; 128];
+    let v0 = &v[0];
+    let n0 = v0.len();
+    for i in 0..n0 {
+        let c = v0[i] as usize;
+        block[c] |= 1;
+    }
+    println!("{}", block);
     return 100;
 }
 
