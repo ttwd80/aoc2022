@@ -15,17 +15,18 @@ fn main() {
         for line in lines {
             if let Ok(s) = line {
                 let ba = s.as_bytes();
-                println!("{}", s);
+                // println!("{}", s);
                 block3.push(s);
                 if block3.len() == 3 {
                     result3 += process3(&block3, target2);
                     block3.truncate(0);
-                    break;
+                    // break;
                 }
 
             }
         }
     }
+    result3 += process3(&block3, target2);
     println!("{}", result1);
     println!("{}", result3);
 }
