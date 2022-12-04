@@ -50,7 +50,7 @@ fn process3(v: &Vec<String>, target: i32) -> i32 {
         let c = v2.chars().nth(i).unwrap() as usize;
         block[c] |= 4;
         if block[c] == 7 {
-            println!("{}", c as as u8 as char);
+            println!("{}", (c as u8) as char);
             return c as i32;
         }
     }
