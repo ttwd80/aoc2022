@@ -51,13 +51,15 @@ fn process3(v: &Vec<String>, target: i32) -> i32 {
         block[c] |= 4;
         if block[c] == 7 {
             println!("{}", (c as u8) as char);
-            return c as i32;
+            return change(c as i32);
         }
     }
     return 100;
 }
 
-
+fn change(x: i32) -> i32 {
+    return 200;
+}
 // The output is wrapped in a Result to allow matching on errors
 // Returns an Iterator to the Reader of the lines of the file.
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
