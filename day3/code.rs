@@ -32,7 +32,7 @@ fn main() {
 
 fn process3(v: &Vec<String>, target: i32) -> i32 {
     let mut _block:[u8;128] = [0; 128];
-    let _v0 = v[0];
+    let _v0 = &v[0];
     return 100;
 }
 
