@@ -51,7 +51,7 @@ fn process3(v: &Vec<String>, target: i32) -> i32 {
         block[c] |= 4;
         if block[c] == 7 {
             println!("{}", c as char);
-            return c as uint;
+            return c as i32;
         }
     }
     return 100;
