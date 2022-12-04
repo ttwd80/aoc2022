@@ -18,7 +18,7 @@ fn main() {
                 println!("{}", s);
                 block3.push(s);
                 if block3.len() == 3 {
-                    result += process3(&block3, target2);
+                    result3 += process3(&block3, target2);
                     block3.truncate(0);
                     break;
                 }
