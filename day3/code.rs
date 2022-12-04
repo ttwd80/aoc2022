@@ -58,7 +58,11 @@ fn process3(v: &Vec<String>, target: i32) -> i32 {
 }
 
 fn change(x: i32) -> i32 {
-    return 200;
+    if x <= 90 {
+        return x - 64 + 26
+    } else {
+        return x - 96;
+    }
 }
 // The output is wrapped in a Result to allow matching on errors
 // Returns an Iterator to the Reader of the lines of the file.
