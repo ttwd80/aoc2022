@@ -42,19 +42,19 @@ fn process(commands: Vec<String>, mut stacks: Vec<VecDeque<char>>, fifo: bool) -
         let source = split[3].parse::<i32>().unwrap() as usize;
         let target = split[5].parse::<i32>().unwrap() as usize;
 
-        let mut vec_deque: VecDeque<char> = VecDeque::new();
+        let mut temp: VecDeque<char> = VecDeque::new();
         let push_to_temp = configure_push(fifo);
 
         for _ in 0..count {
             let v = stacks[source - 1].pop_front().unwrap();
-            push_to_temp(&mut vec_deque, v);
+            push_to_temp(&mut temp, v);
         }
         for _ in 0..count {
-            let v = vec_deque.pop_front().unwrap();
+            let v = temp.pop_front().unwrap();
             stacks[target - 1].push_front(v);
         }
     }
-    let mut result = String::from("");
+    let mut result = String::new();
     let total_stack_count = stacks.len();
     for i in 0..total_stack_count {
         let c: char = *stacks[i].front().unwrap();
