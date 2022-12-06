@@ -25,6 +25,7 @@ fn process(vec: &Vec<String>, count: usize) -> i32 {
 
     let b = line.as_bytes();
     let mut a = 0;
+    let mut d = 0;
 
     //process every single character in the line, once
     for i in 0..n {
@@ -36,6 +37,7 @@ fn process(vec: &Vec<String>, count: usize) -> i32 {
         // if it already existed, increment it
         if !map.contains_key(&c) {
             map.insert(c, 1);
+            d += 1;
         } else {
             let value = *map.get(&c).unwrap();
             map.insert(c, value + 1);
@@ -50,6 +52,7 @@ fn process(vec: &Vec<String>, count: usize) -> i32 {
             // if it is the last one, remove it
             if value == 1 {
                 map.remove(&ca);
+                d -= 1;
             } else {
                 // if not the last one, decrement it
                 map.insert(ca, value - 1);
@@ -58,7 +61,7 @@ fn process(vec: &Vec<String>, count: usize) -> i32 {
             a += 1;
         }
         // if we have distinct items, we hit our mark
-        if map.len() == count {
+        if d == count {
             return (i + 1) as i32;
         }
     }
