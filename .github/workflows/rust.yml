@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: cd day3 && rustc code.rs
+      run: cd day03 && rustc code.rs
     - name: Run tests
-      run: cd day3 && RUST_BACKTRACE=full ./code
+      run: cd day03 && RUST_BACKTRACE=full ./code
