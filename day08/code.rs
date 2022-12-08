@@ -56,14 +56,12 @@ fn main() {
 }
 
 fn process_1(values: &Vec<Vec<u8>>, r: i32, c: i32, rows: i32, cols: i32) -> i32 {
-    if process_1_count(values, r, c, rows, cols, 0, 1)
-        || process_1_count(values, r, c, rows, cols, 0, -1)
-        || process_1_count(values, r, c, rows, cols, 1, 0)
-        || process_1_count(values, r, c, rows, cols, -1, 0)
-    {
-        return 1;
+    for d in [[0, 1], [0, -1], [1, 0], [-1, 0]] {
+        if process_1_count(values, r, c, rows, cols, d[0], d[1]) {
+            return 1;
+        }
     }
-    return 0;
+    0
 }
 fn process_1_count(
     values: &Vec<Vec<u8>>,
@@ -86,16 +84,15 @@ fn process_1_count(
         nc = nc + cc;
         nr = nr + rc;
     }
-    return true;
+    true
 }
 
 fn process_2(values: &Vec<Vec<u8>>, r: i32, c: i32, rows: i32, cols: i32) -> i32 {
-    let d1 = process_2_count(values, r, c, rows, cols, -1, 0); //U
-    let d2 = process_2_count(values, r, c, rows, cols, 0, -1); //L
-    let d3 = process_2_count(values, r, c, rows, cols, 0, 1); //R
-    let d4 = process_2_count(values, r, c, rows, cols, 1, 0); //D
-    let p = d1 * d2 * d3 * d4;
-    return p;
+    let mut product = 1;
+    for d in [[0, 1], [0, -1], [1, 0], [-1, 0]] {
+        product *= process_2_count(values, r, c, rows, cols, d[0], d[1]);
+    }
+    product
 }
 
 fn process_2_count(
@@ -121,5 +118,5 @@ fn process_2_count(
         nc = nc + cc;
         nr = nr + rc;
     }
-    return count;
+    count
 }
